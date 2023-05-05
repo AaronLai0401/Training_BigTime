@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Timer || Aaron</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta
+      name="description"
+      content="Timer/stopwatch with big,legible digits."
+    />
+  </head>
+
+  <body id="body">
+
+    <!-- 碼表ICON -->
+    <button class="modeButton" id="stopModeButton" >
+      <svg
+        width="100px"
+        height="105px"
+        viewBox="0 0 17 17"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        class="modeButtonIcon"
+        
+      >
+        <path
+          d="M9 2.025v-1.025h1.5v-1h-4v1h1.5v1.025c-3.902 0.26-7 3.508-7 7.475 0 4.136 3.364 7.5 7.5 7.5s7.5-3.364 7.5-7.5c0-3.967-3.098-7.215-7-7.475zM8.5 16c-3.584 0-6.5-2.916-6.5-6.5s2.916-6.5 6.5-6.5 6.5 2.916 6.5 6.5-2.916 6.5-6.5 6.5zM9 9h4v1h-5v-4h1v3z"
+        
+        />
+      </svg>
+    </button>
+    <!-- 計時ICON -->
+    <button class="modeButton" id="timerModeButton">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="100px"
+        height="105px"
+        viewBox="0 0 24 24"
+        fill="none"
+        class="modeButtonIcon"
+      >
+        <path
+          d="M12 9V13L15 15M3 6L6.5 3M21 6L17.5 3M12 21C16.4183 21 20 17.4183 20 13C20 8.58172 16.4183 5 12 5C7.58172 5 4 8.58172 4 13C4 17.4183 7.58172 21 12 21Z"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+    <!-- 設定ICON -->
+    <button id="prefsIcon">
+      <svg
+        width="100px"
+        height="100px"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="functionButtonIcon"
+      >
+        <path
+          d="M20.1 9.2214C18.29 9.2214 17.55 7.9414 18.45 6.3714C18.97 5.4614 18.66 4.3014 17.75 3.7814L16.02 2.7914C15.23 2.3214 14.21 2.6014 13.74 3.3914L13.63 3.5814C12.73 5.1514 11.25 5.1514 10.34 3.5814L10.23 3.3914C9.78 2.6014 8.76 2.3214 7.97 2.7914L6.24 3.7814C5.33 4.3014 5.02 5.4714 5.54 6.3814C6.45 7.9414 5.71 9.2214 3.9 9.2214C2.86 9.2214 2 10.0714 2 11.1214V12.8814C2 13.9214 2.85 14.7814 3.9 14.7814C5.71 14.7814 6.45 16.0614 5.54 17.6314C5.02 18.5414 5.33 19.7014 6.24 20.2214L7.97 21.2114C8.76 21.6814 9.78 21.4014 10.25 20.6114L10.36 20.4214C11.26 18.8514 12.74 18.8514 13.65 20.4214L13.76 20.6114C14.23 21.4014 15.25 21.6814 16.04 21.2114L17.77 20.2214C18.68 19.7014 18.99 18.5314 18.47 17.6314C17.56 16.0614 18.3 14.7814 20.11 14.7814C21.15 14.7814 22.01 13.9314 22.01 12.8814V11.1214C22 10.0814 21.15 9.2214 20.1 9.2214ZM12 15.2514C10.21 15.2514 8.75 13.7914 8.75 12.0014C8.75 10.2114 10.21 8.7514 12 8.7514C13.79 8.7514 15.25 10.2114 15.25 12.0014C15.25 13.7914 13.79 15.2514 12 15.2514Z"
+        />
+      </svg>
+    </button>
+
+    <!-- 碼表stopScreen-->
+    <main id="stopScreen">
+      <span id="message" style="font: 5vmax serif; color: #fff"></span>
+      <span class="digits" id="stopMinutes">00</span><span class="colon">:</span
+      ><span class="digits" id="stopSeconds">00</span>
+      <span class="startButton" id="startStopwatchButton">&#9658;</span>
+
+      <!-- RESET ICON -->
+      <button class="resetButton" id="resetStopwatchButton">
+        <svg
+          width="100px"
+          height="100px"
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+          class="functionButtonIcon"
+        >
+          <path
+            d="M13.9907,1.31133017e-07 C14.8816,1.31133017e-07 15.3277,1.07714 14.6978,1.70711 L13.8556,2.54922 C14.421,3.15654 14.8904,3.85028 15.2448,4.60695 C15.8028,5.79836 16.0583,7.109 15.9888,8.42277 C15.9193,9.73654 15.5268,11.0129 14.8462,12.1388 C14.1656,13.2646 13.2178,14.2053 12.0868,14.8773 C10.9558,15.5494 9.67655,15.9322 8.3623,15.9918 C7.04804,16.0514 5.73937,15.7859 4.55221,15.2189 C3.36505,14.652 2.33604,13.8009 1.55634,12.7413 C0.776635,11.6816 0.270299,10.446 0.0821822,9.14392 C0.00321229,8.59731 0.382309,8.09018 0.928918,8.01121 C1.47553,7.93224 1.98266,8.31133 2.06163,8.85794 C2.20272,9.83451 2.58247,10.7612 3.16725,11.556 C3.75203,12.3507 4.52378,12.989 5.41415,13.4142 C6.30452,13.8394 7.28602,14.0385 8.27172,13.9939 C9.25741,13.9492 10.2169,13.6621 11.0651,13.158 C11.9133,12.6539 12.6242,11.9485 13.1346,11.1041 C13.6451,10.2597 13.9395,9.30241 13.9916,8.31708 C14.0437,7.33175 13.8521,6.34877 13.4336,5.45521 C13.178,4.90949 12.8426,4.40741 12.4402,3.96464 L11.7071,4.69779 C11.0771,5.32776 9.99996,4.88159 9.99996,3.99069 L9.99996,1.31133017e-07 L13.9907,1.31133017e-07 Z M1.499979,4 C2.05226,4 2.499979,4.44772 2.499979,5 C2.499979,5.55229 2.05226,6 1.499979,6 C0.947694,6 0.499979,5.55228 0.499979,5 C0.499979,4.44772 0.947694,4 1.499979,4 Z M3.74998,1.25 C4.30226,1.25 4.74998,1.69772 4.74998,2.25 C4.74998,2.80229 4.30226,3.25 3.74998,3.25 C3.19769,3.25 2.74998,2.80228 2.74998,2.25 C2.74998,1.69772 3.19769,1.25 3.74998,1.25 Z M6.99998,0 C7.55226,0 7.99998,0.447716 7.99998,1 C7.99998,1.55229 7.55226,2 6.99998,2 C6.44769,2 5.99998,1.55229 5.99998,1 C5.99998,0.447716 6.44769,0 6.99998,0 Z"
+          />
+        </svg>
+      </button>
+    </main>
+
+    <!-- 計時器顯示表-->
+    <main id="timerScreen">
+      <span class="digits" id="timerMinutes">00</span
+      ><span class="colon">:</span
+      ><span class="digits" id="timerSeconds">00</span>
+    </main>
+
+    <!-- 定時器setTimerScreen -->
+    <main id="setTimerScreen">
+      <span class="digits">
+        <span class="digitAndButtons">
+          <span class="arrow" class="uparrow" id="incMinute10">&#9650;</span>
+          <span class="digit" id="timerMinute10">0</span>
+          <span class="arrow" class="downarrow" id="decMinute10"
+            >&#9660;</span
+          > </span
+        ><span class="digitAndButtons"
+          ><span class="arrow" class="uparrow" id="incMinute1">&#9650;</span
+          ><span class="digit" id="timerMinute1">0</span
+          ><span class="arrow" class="downarrow" id="decMinute1"
+            >&#9660;</span
+          ></span
+        ></span
+      ><span class="colon">:</span
+      ><span class="digits"
+        ><span class="digitAndButtons">
+          <span class="arrow" class="uparrow" id="incSecond10">&#9650;</span>
+          <span class="digit" id="timerSecond10">0</span>
+          <span class="arrow" class="downarrow" id="decSecond10"
+            >&#9660;</span
+          > </span
+        ><span class="digitAndButtons"
+          ><span class="arrow" class="uparrow" id="incSecond1">&#9650;</span>
+          <span class="digit" id="timerSecond1">0</span>
+          <span class="arrow" class="downarrow" id="decSecond1">&#9660;</span>
+        </span>
+      </span>
+
+      <span class="startButton" id="startTimerButton">&#9658;</span>
+
+      <!-- RESET ICON -->
+      <button class="resetButton" id="resetTimerButton">
+        <svg
+          width="100px"
+          height="100px"
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+          class="functionButtonIcon"
+        >
+          <path
+            d="M13.9907,1.31133017e-07 C14.8816,1.31133017e-07 15.3277,1.07714 14.6978,1.70711 L13.8556,2.54922 C14.421,3.15654 14.8904,3.85028 15.2448,4.60695 C15.8028,5.79836 16.0583,7.109 15.9888,8.42277 C15.9193,9.73654 15.5268,11.0129 14.8462,12.1388 C14.1656,13.2646 13.2178,14.2053 12.0868,14.8773 C10.9558,15.5494 9.67655,15.9322 8.3623,15.9918 C7.04804,16.0514 5.73937,15.7859 4.55221,15.2189 C3.36505,14.652 2.33604,13.8009 1.55634,12.7413 C0.776635,11.6816 0.270299,10.446 0.0821822,9.14392 C0.00321229,8.59731 0.382309,8.09018 0.928918,8.01121 C1.47553,7.93224 1.98266,8.31133 2.06163,8.85794 C2.20272,9.83451 2.58247,10.7612 3.16725,11.556 C3.75203,12.3507 4.52378,12.989 5.41415,13.4142 C6.30452,13.8394 7.28602,14.0385 8.27172,13.9939 C9.25741,13.9492 10.2169,13.6621 11.0651,13.158 C11.9133,12.6539 12.6242,11.9485 13.1346,11.1041 C13.6451,10.2597 13.9395,9.30241 13.9916,8.31708 C14.0437,7.33175 13.8521,6.34877 13.4336,5.45521 C13.178,4.90949 12.8426,4.40741 12.4402,3.96464 L11.7071,4.69779 C11.0771,5.32776 9.99996,4.88159 9.99996,3.99069 L9.99996,1.31133017e-07 L13.9907,1.31133017e-07 Z M1.499979,4 C2.05226,4 2.499979,4.44772 2.499979,5 C2.499979,5.55229 2.05226,6 1.499979,6 C0.947694,6 0.499979,5.55228 0.499979,5 C0.499979,4.44772 0.947694,4 1.499979,4 Z M3.74998,1.25 C4.30226,1.25 4.74998,1.69772 4.74998,2.25 C4.74998,2.80229 4.30226,3.25 3.74998,3.25 C3.19769,3.25 2.74998,2.80228 2.74998,2.25 C2.74998,1.69772 3.19769,1.25 3.74998,1.25 Z M6.99998,0 C7.55226,0 7.99998,0.447716 7.99998,1 C7.99998,1.55229 7.55226,2 6.99998,2 C6.44769,2 5.99998,1.55229 5.99998,1 C5.99998,0.447716 6.44769,0 6.99998,0 Z"
+            
+            />
+        </svg>
+      </button>
+    </main>
+
+    <!-- 使用者設定 -->
+    <main id="prefsScreen">
+
+      <!-- 字體 -->
+      <div id="prefsTable">
+        <div class="prefsRow">
+          <p id="courier" style="font-family: Courier">01:23</p>
+          <p id="monaco" style="font-family: Monaco, Menlo">01:23</p>
+        </div>
+      </div>
+
+      <!-- 顏色 -->
+      <p id="colors">
+        <span id="red" style="color: #f00">&#9679;</span>
+        <span id="green" style="color: #0f0">&#9679;</span>
+        <span id="cyan" style="color: #0ff">&#9679;</span>
+        <span id="yellow" style="color: #ff0">&#9679;</span>
+        <span id="white" style="color: #fff">&#9679;</span>
+      </p>
+
+      <!-- 亮度 -->
+      <input type="range" id="brightnessSlide" max="255" value="255" />
+
+      <!-- DK模式 -->
+      <div id="darkMode">
+        <label for="darkModeCheck" id="darkModeTxt">Darkroom :</label>
+        <input type="checkbox" id="darkModeCheck" />
+      </div>
+
+      <!-- 取消、儲存 -->
+      <div class="prefsButton">
+        <button id="cancelPrefsButton" class="checkPrefButton">Cancel</button>
+        <button id="savePrefsButton" class="checkPrefButton">Save</button>
+      </div>
+    </main>
+
+    <script src="bigtimer.js"></script>
+  </body>
+</html>

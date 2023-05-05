@@ -1,0 +1,214 @@
+
+  * {
+    margin:0;
+    padding:0;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+  
+  html, body {
+    height:100%;
+    background-color: #000;
+  }
+  
+  body {
+    display: flex;
+    display: -webkit-flex;
+  }
+  
+  
+  main {
+    font-weight:bold;
+    font-family:serif;
+    text-align:center;
+    color: #f00;
+    display:none;
+    margin:auto;
+  }
+  
+  main#setTimerScreen {
+    font-size:20vmax;
+  }
+  
+  span.colon {
+   font-family:serif;
+   font-weight:normal;
+  }
+  
+  #setTimerScreen span.colon {
+    vertical-align: 1ex;
+  }
+  
+  button {
+    font-size: 4vmax;
+    padding: 5px 5px 3px 5px;
+    background-color:black;
+    border: none;
+    color:#ccc;
+
+  }
+  
+  button.modeButton {
+    position:fixed;
+    top:0;
+  }
+  
+  #stopModeButton {
+    position:fixed;
+    left:0;
+  }
+  
+  #timerModeButton {
+    position:fixed;
+   right:0;
+  }
+  
+  #prefsIcon {
+    position:fixed;
+    left:0;
+    bottom:0;
+  }
+  
+  span.startButton {
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-40%, -50%);
+    -webkit-transform: translate(-40%, -50%);
+    opacity: 0.5;
+    color:#fff;
+    font-size:.8em;
+    font-family:monospace;
+  }
+  
+  button.resetButton {
+    position:fixed;
+    bottom:0;
+    right:0;
+  }
+  
+  
+  #setTimerScreen span.digitAndButtons {
+    display:inline-block;
+    margin:2vmin 4vmin;
+  }
+  
+  #setTimerScreen span.arrow {
+    font-size:5vmax;
+    font-family:serif;
+    color:#ccc;
+    display:block;
+    line-height:90%;
+  }
+  
+  /* 使用者偏好頁面 */
+  main#prefsScreen {
+    position: relative;
+    font-size:9vmax;
+  }
+  
+  main#prefsScreen p {
+    padding:2vmin;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #000;
+  }
+  
+  /* 亮度條 */
+  main#prefsScreen #brightnessSlide {
+    -webkit-appearance: none;
+     display: block;
+     width:100%;
+     background: none;
+     border-radius: 0; 
+     cursor: pointer;
+     outline: dashed 1px #ccc;
+  }
+
+  main#prefsScreen #brightnessSlide::-webkit-slider-runnable-track {
+    height: 0px;
+  }
+
+  main#prefsScreen #brightnessSlide::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    position: relative;
+    top: -10px;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+    background-color: #13c133;
+    /* z-index: 3; */
+  }
+
+  /* DK模式 */
+  #darkMode {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10px;
+    margin: 3rem 0;
+  }
+  #darkMode label{
+    position: relative;
+    font-size: 2rem;
+    color: #fff;
+    margin-right: 0;
+  }
+  #darkMode input {
+    position: relative;
+    transform: scale(2.5);
+  }
+  .prefsButton {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    top: 0;
+
+  }
+
+  .prefsButton #savePrefsButton {
+    border: 2px solid #fff;
+    padding: .5rem;
+  
+  }
+  
+  .prefsButton #cancelPrefsButton {
+    border: 2px solid #fff;
+    padding: .5rem;
+  }
+  
+  @media screen and (orientation: landscape) {
+    main {
+      font-size:33vw;
+    }
+    div#prefsTable {
+      display:table;
+    }
+    div.prefsRow {
+      display:table-row;
+    }
+    div.prefsRow p {
+      display:table-cell;
+    }
+  }
+  
+  
+  @media screen and (orientation: portrait) {
+    main#stopScreen, main#timerScreen {
+      font-size:45vh;
+      line-height:90%;
+    }
+    span.digits {
+      display:block;
+    }
+    span.colon {
+      display:none;
+    }
+    #setTimerScreen span.digits {
+      margin:.5ex auto;
+    }
+  }
+  
