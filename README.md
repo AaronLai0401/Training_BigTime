@@ -1,6 +1,7 @@
 # Training_BigTime
 Practice
 
-<h2>DEMO</h2>
+<h2>
+<a href="https://aaronlai0401.github.io/Training_BigTime/" target="_blank" rel="noreferrer noopenner"> DEMO : BIG_TIME </a>
+</h2>
 
-<a target = '_blank'>https://aaronlai0401.github.io/Training_BigTime/</a>
