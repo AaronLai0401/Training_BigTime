@@ -1,4 +1,4 @@
-const d = d;
+const d = document;
 
 const DOM = {
   brightnessSlide,
@@ -275,7 +275,7 @@ function togglePrefs() {
 
 // ----------------使用者偏好設定 ----------------
 
-// const buttons = d.querySelectorAll("button");
+// const buttons = document.querySelectorAll("button");
 const startButtons = d.querySelectorAll(".startButton");
 const modeButtonIcons = d.querySelectorAll(".modeButtonIcon");
 const functionButtonIcons = d.querySelectorAll(".functionButtonIcon");
